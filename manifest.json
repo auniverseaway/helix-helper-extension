@@ -1,0 +1,27 @@
+{
+    "name": "Helix Helper",
+    "version": "1.0",
+    "description": "A set of helpers for working with Helix content.",
+    "permissions": ["activeTab", "declarativeContent", "storage"],
+    "options_page": "options.html",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "img/helix-logo.svg",
+        "32": "img/helix-logo.svg",
+        "48": "img/helix-logo.svg",
+        "128": "img/helix-logo.svg"
+      }
+    },
+    "icons": {
+        "16": "img/helix-logo.svg",
+        "32": "img/helix-logo.svg",
+        "48": "img/helix-logo.svg",
+        "128": "img/helix-logo.svg"
+    },
+    "manifest_version": 2
+  }
