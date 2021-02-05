@@ -7,38 +7,12 @@ import { Provider,
          defaultTheme,
          Button,
          Flex,
-         TextField,
-         ActionButton,
          Text,
-         } from '@adobe/react-spectrum';
-import Delete from '@spectrum-icons/workflow/Delete';
-import MoveUpDown from '@spectrum-icons/workflow/MoveUpDown';
+        } from '@adobe/react-spectrum';
+import arrayMove from 'array-move';
+import URLPairList from './js/URLPairList';
 
 const BASE_URLS = [{ publicUrl: '', helixUrl: ''}];
-
-function URLPairList({ urls, handleDelete, handleChange }) {
-    const listItems = urls.map((url, index) =>
-        <Flex direction="row" alignItems="flex-end" gap="size-100" key={index} justifyContent="space-evenly">
-            <TextField
-                label="Public URL"
-                placeholder="https://adobe.com"
-                value={url.publicUrl}
-                onChange={(value) => handleChange(index, 'publicUrl', value)} />
-            <TextField
-                label="Helix URL"
-                placeholder="https://hlx.page"
-                value={url.helixUrl}
-                onChange={(value) => handleChange(index, 'helixUrl', value)} />
-            <ActionButton onPress={() => handleDelete(index)}>
-                <Delete />
-            </ActionButton>
-            <ActionButton isQuiet={true}>
-                <MoveUpDown />
-            </ActionButton>
-        </Flex>
-    );
-    return listItems;
-};
 
 function App() {
     const [urls, setUrls] = useState(BASE_URLS);
@@ -48,9 +22,7 @@ function App() {
         try {
             const getSyncUrls = async () => {
                 const results = await browser.storage.sync.get('urls');
-                // Return an empty array if there are no urls
                 const storedUrls  = results.urls;
-                console.log(results);
                 if (storedUrls) {
                     setUrls([...urls, ...storedUrls]);
                 }
@@ -85,9 +57,14 @@ function App() {
         setChanged(true);
     };
 
+    onSortEnd = ({oldIndex, newIndex}) => {
+        const currentUrls = arrayMove(urls, oldIndex, newIndex);
+        setUrls(currentUrls);
+    };
+
     addNewUrl = () => {
         const currentUrls = [...urls];
-        currentUrls.unshift(BASE_URLS);
+        currentUrls.unshift(BASE_URLS[0]);
         setUrls(currentUrls);
         setChanged(true);
     }
@@ -95,7 +72,7 @@ function App() {
     return (
         <Provider theme={defaultTheme}>
             <Flex justifyContent="center">
-                <Flex width="500px" marginTop={12} direction="column" gap="size-100">
+                <Flex width="600px" marginTop={12} direction="column" gap="size-100">
                     <Heading marginTop={0} level={1}>Helix Helper</Heading>
                         <Text>
                             This extension helps working with Helix content. 
@@ -109,7 +86,11 @@ function App() {
                             <Button variant="cta" onPress={saveToBrowser}>Save</Button>
                         </Flex>
                         {urls[0] &&
-                            <URLPairList urls={urls} handleDelete={handleDelete} handleChange={handleChange} />
+                            <URLPairList
+                                urls={urls}
+                                handleDelete={handleDelete}
+                                handleChange={handleChange}
+                                onSortEnd={onSortEnd} />
                         }
                 </Flex>
             </Flex>

@@ -37,8 +37,14 @@ const clicky = async () => {
     results.urls.forEach(urlPair => {
         if (currentUrl.includes(urlPair.publicUrl)) {
             const helixedUrl = new URL(currentUrl.replace(urlPair.publicUrl, urlPair.helixUrl));
-            const resp = sendPurge(helixedUrl.host, helixedUrl.pathname);
-            console.log(resp);
+            const respProm = sendPurge(helixedUrl.host, helixedUrl.pathname);
+            console.log(respProm);
+            clearCache.innerHTML = 'Clearing...'
+            respProm.then((resp) => {
+                if (resp.ok) {
+                    clearCache.innerHTML = 'Cleared!';
+                }
+            });
         }
     });
 };
