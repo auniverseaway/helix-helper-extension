@@ -12,10 +12,10 @@ import { Provider,
 import arrayMove from 'array-move';
 import URLPairList from './js/URLPairList';
 
-const BASE_URLS = [{ publicUrl: '', helixUrl: ''}];
+const BASE_URLS = { publicUrl: '', helixUrl: ''};
 
 function App() {
-    const [urls, setUrls] = useState(BASE_URLS);
+    const [urls, setUrls] = useState([{...BASE_URLS}]);
     const [changed, setChanged] = useState(false);
 
     useEffect(() => {
@@ -64,7 +64,7 @@ function App() {
 
     addNewUrl = () => {
         const currentUrls = [...urls];
-        currentUrls.unshift(BASE_URLS[0]);
+        currentUrls.unshift({...BASE_URLS});
         setUrls(currentUrls);
         setChanged(true);
     }
