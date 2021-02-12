@@ -5,7 +5,7 @@ import MoveUpDown from '@spectrum-icons/workflow/MoveUpDown';
 import { sortableContainer, sortableElement, sortableHandle } from 'react-sortable-hoc';
 
 const DragHandle = sortableHandle(() => (
-    <span><MoveUpDown/></span>
+    <span className="hlx-List-SortableHandle" tabIndex={0}><MoveUpDown/></span>
 ));
 
 const SortableItem = sortableElement(({ url, idx, handleDelete, handleChange }) =>
