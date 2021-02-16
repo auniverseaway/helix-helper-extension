@@ -1,93 +1,123 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Provider,
+import 'regenerator-runtime/runtime';
+import { Divider,
+         Image,
+         Provider,
          Heading,
-         defaultTheme,
+         darkTheme,
          Button,
          Flex,
          Text,
         } from '@adobe/react-spectrum';
 import arrayMove from 'array-move';
-import URLPairList from './URLPairList';
+import URLPairList from './ProjectList';
+import getSyncProjects from './utils/getSyncProjects';
+import reduceItems from './utils/reduceItems';
+import { handleFileUpload } from './utils/handleFiles';
 
-const BASE_URLS = { publicUrl: '', helixUrl: ''};
+const PROJECT_TEMPLATE = {
+    name: '',
+    liveUrl: '',
+    previewUrl: '',
+    contentUrl: '',
+    edit: true,
+};
 
 export default function HelixHelper({ browser }) {
-    const [urls, setUrls] = useState([{...BASE_URLS}]);
+    const [projects, setProjects] = useState([{...PROJECT_TEMPLATE}]);
     const [changed, setChanged] = useState(false);
 
     useEffect(() => {
-        let haveUrls = false;
-        const getSyncUrls = async () => {
-                const results = await browser.storage.sync.get('urls');
-                const storedUrls  = results.urls;
-                if (storedUrls && !haveUrls) {
-                    setUrls([...urls, ...storedUrls]);
-                }
-            };
-        getSyncUrls();
-        return () => haveUrls = true;
+        let haveProjects = false;
+        getSyncProjects(projects, setProjects, haveProjects, browser);
+        return () => haveProjects = true;
     }, []);
 
     const saveToBrowser = async () => {
-        const currentUrls = [...urls];
-        const firstUrl = currentUrls[0];
-        if (!firstUrl.helixUrl && !firstUrl.publicUrl) {
-            currentUrls.shift();
-        }
-        const setter = await browser.storage.sync.set({ urls: currentUrls });
+        const curProjects = reduceItems(projects);
+        await browser.storage.sync.set({ projects: curProjects });
+        setProjects(curProjects);
         setChanged(false);
     }
 
     const handleDelete = (index) => {
-        const currentUrls = [...urls];
-        currentUrls.splice(index, 1);
-        setUrls(currentUrls);
+        const curProjects = [...projects];
+        curProjects.splice(index, 1);
+        setProjects(curProjects);
         setChanged(true);
     }
 
     const handleChange = (index, fieldName, value) => {
-        const currentUrls = [...urls];
-        currentUrls[index][fieldName] = value;
-        setUrls(currentUrls);
+        const curProjects = [...projects];
+        curProjects[index][fieldName] = value;
+        setProjects(curProjects);
         setChanged(true);
+    };
+
+    const handleEdit = (index, isEdit) => {
+        const curProjects = [...projects];
+        curProjects[index].edit = isEdit;
+        setProjects(curProjects);
     };
 
     const onSortEnd = ({oldIndex, newIndex}) => {
-        const currentUrls = arrayMove(urls, oldIndex, newIndex);
-        setUrls(currentUrls);
+        setProjects(arrayMove(projects, oldIndex, newIndex));
+        setChanged(true);
     };
 
-    const addNewUrl = () => {
-        const currentUrls = [...urls];
-        currentUrls.unshift({...BASE_URLS});
-        setUrls(currentUrls);
+    const addNewProject = (project) => {
+        const curProjects = [...projects];
+        const newProject = {...project} || {...PROJECT_TEMPLATE};
+        curProjects.unshift(newProject);
+        setProjects(curProjects);
+    };
+
+    const handleUploadChange = async (e) => {
+        const projectJson = await handleFileUpload(e.target);
+        if (projectJson.error) {
+            return;
+        }
+        projectJson.edit = false;
+        projectJson.imported = true;
+        addNewProject(projectJson);
         setChanged(true);
-    }
+    };
+
+    const addImport = (e) => {
+        e.target.nextElementSibling.click();
+    };
 
     return (
-        <Provider theme={defaultTheme}>
+        <Provider theme={darkTheme}>
             <Flex justifyContent="center">
-                <Flex width="600px" marginTop={12} direction="column" gap="size-100">
-                    <Heading marginTop={0} level={1}>Helix Helper</Heading>
-                        <Text>
-                            This extension helps working with Helix content. 
-                            Use the URLs below to map public URLs to Helix URLs for cache clearing.
-                        </Text>
-                        <Flex marginTop={12} justifyContent="space-between" alignItems="center" marginBottom={12}>
-                            <Button variant="primary" onPress={addNewUrl}>Add new</Button>
-                            {changed &&
-                                <Text>You have unsaved changes.</Text>
-                            }
+                <Flex width="736px" marginTop={12} direction="column" gap="size-100">
+                    <Flex justifyContent="space-between" alignItems="flex-end" marginBottom={6}>
+                        <Flex alignItems="center">
+                            <Image src="img/helix-logo.svg" UNSAFE_className="hlx-Logo" alt="Helix Helper" />
+                            <Heading marginTop={0} level={1} UNSAFE_className="hlx-Title">Helix Helper</Heading>
+                        </Flex>
+                        {changed && 
+                        <Flex alignItems="center">
+                            <Text marginEnd={12}><em>You have unsaved changes.</em></Text>
                             <Button variant="cta" onPress={saveToBrowser}>Save</Button>
                         </Flex>
-                        {urls[0] &&
-                            <URLPairList
-                                urls={urls}
-                                handleDelete={handleDelete}
-                                handleChange={handleChange}
-                                onSortEnd={onSortEnd} />
                         }
+                    </Flex>
+                    <Divider />
+                    <Flex marginTop={6} gap="size-125" justifyContent="end" alignItems="center" marginBottom={6}>
+                        <Button variant="secondary" isQuiet onPress={addImport}>Import</Button>
+                        <input className="hlx-FileUpload" type="file" onChange={handleUploadChange} />
+                        <Button variant="primary" onPress={addNewProject}>Add new</Button>
+                    </Flex>
+                    {projects[0] &&
+                        <URLPairList
+                            projects={projects}
+                            handleDelete={handleDelete}
+                            handleChange={handleChange}
+                            handleEdit={handleEdit}
+                            onSortEnd={onSortEnd} />
+                    }
                 </Flex>
             </Flex>
         </Provider>
