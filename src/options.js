@@ -1,3 +1,4 @@
+import React from 'react';
 import { render } from 'react-dom';
 import HelixHelper from './js/HelixHelper';
 import browser from 'webextension-polyfill';

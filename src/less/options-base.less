@@ -2,11 +2,16 @@ body {
     margin: 0;
 
     > .hlx-List-item {
-        color: #FFF;
-        background-color: rgba(0,0,0,0.5);
-        align-items: center;
-        border-radius: 2px;
-        padding: 0 12px;
+        > div {
+            padding: 10px !important;
+            border: 3px solid #378ced !important;
+            font-family: 'Adobe Clean';
+            font-size: 16px;
+            /* margin-top: 16px; */
+            border-radius: 8px !important;
+            background-color: rgba(0,0,0,.8);
+            color: #c8c8c8;
+        }
 
         button {
             display: none;
@@ -21,21 +26,92 @@ main {
     }
 }
 
-.hlx-List {
-    padding: 0;
-    margin: 0;
+.hlx-Logo {
+    width: 48px;
+    height: 48px;
+}
 
-    .hlx-List-item {
-        align-items: flex-end;
-        justify-content: space-between;
+.hlx-Title {
+    margin: 0px;
+    font-size: 48px;
+    line-height: 48px;
+
+    &:before {
+        content: '';
+        margin-right: 12px;
     }
 }
 
-.hlx-List-item {
+.hlx-FileUpload {
+    display: none;
+}
+
+.hlx-List {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.hlx-List-item {
+    list-style: none;
+    width: 362px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 12px;
 
     > div {
-        width: 250px !important;
+        height: 296px;
+        margin-bottom: 0 !important;
+    }
+
+    .hlx-List-contentContainer {
+        margin: 6px 48px 12px 12px;
+
+        p {
+            font-size: 14px;
+            line-height: 14px;
+            margin-bottom: 0px;
+            text-transform: uppercase;
+        }
+
+        a {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0px;
+    }
+
+    .hlx-List-fieldContainer {
+        margin: 6px 48px 12px 12px;
+    }
+
+
+    .hlx-List-itemHandle {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        cursor: grab;
+    }
+
+    .hlx-List-itemFooter {
+        position: absolute;
+        left: 22px;
+        right: 12px;
+        bottom: 12px;
     }
 }
