@@ -66,7 +66,7 @@ export default function HelixHelper({ browser }) {
         setChanged(true);
     };
 
-    const addNewProject = (project) => {
+    const addNewProject = (e, project) => {
         const curProjects = [...projects];
         const newProject = {...project} || {...PROJECT_TEMPLATE};
         curProjects.unshift(newProject);
@@ -80,7 +80,7 @@ export default function HelixHelper({ browser }) {
         }
         projectJson.edit = false;
         projectJson.imported = true;
-        addNewProject(projectJson);
+        addNewProject(null, projectJson);
         setChanged(true);
     };
 
