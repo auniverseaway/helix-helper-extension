@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D21417C025E579F300327350 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21417BF25E579F300327350 /* AppDelegate.swift */; };
+		D21417C325E579F300327350 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21417C125E579F300327350 /* Main.storyboard */; };
+		D21417C525E579F300327350 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21417C425E579F300327350 /* ViewController.swift */; };
+		D21417C725E579F300327350 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21417C625E579F300327350 /* Assets.xcassets */; };
+		D21417CE25E579F300327350 /* Helix Helper Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D21417CD25E579F300327350 /* Helix Helper Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D21417D325E579F300327350 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D21417D225E579F300327350 /* Cocoa.framework */; };
+		D21417D625E579F300327350 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21417D525E579F300327350 /* SafariWebExtensionHandler.swift */; };
+		D21417EC25E579F400327350 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = D21417E325E579F400327350 /* popup.js */; };
+		D21417ED25E579F400327350 /* images in Resources */ = {isa = PBXBuildFile; fileRef = D21417E425E579F400327350 /* images */; };
+		D21417EE25E579F400327350 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = D21417E525E579F400327350 /* popup.html */; };
+		D21417EF25E579F400327350 /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = D21417E625E579F400327350 /* options.js */; };
+		D21417F025E579F400327350 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = D21417E725E579F400327350 /* manifest.json */; };
+		D21417F125E579F400327350 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = D21417E825E579F400327350 /* options.html */; };
+		D21417F225E579F400327350 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = D21417E925E579F400327350 /* popup.css */; };
+		D21417F325E579F400327350 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = D21417EA25E579F400327350 /* _locales */; };
+		D21417F425E579F400327350 /* options.css in Resources */ = {isa = PBXBuildFile; fileRef = D21417EB25E579F400327350 /* options.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D21417CF25E579F300327350 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D21417B325E579F200327350 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D21417CC25E579F300327350;
+			remoteInfo = "Helix Helper Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D21417DE25E579F300327350 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D21417CE25E579F300327350 /* Helix Helper Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D21417BB25E579F300327350 /* Helix Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Helix Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21417BE25E579F300327350 /* Helix_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Helix_Helper.entitlements; sourceTree = "<group>"; };
+		D21417BF25E579F300327350 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D21417C225E579F300327350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D21417C425E579F300327350 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D21417C625E579F300327350 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D21417C825E579F300327350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D21417CD25E579F300327350 /* Helix Helper Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Helix Helper Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21417D225E579F300327350 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D21417D525E579F300327350 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		D21417D725E579F300327350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D21417D825E579F300327350 /* Helix_Helper_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Helix_Helper_Extension.entitlements; sourceTree = "<group>"; };
+		D21417E325E579F400327350 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = "../../web-ext/popup.js"; sourceTree = "<group>"; };
+		D21417E425E579F400327350 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = "../../web-ext/images"; sourceTree = "<group>"; };
+		D21417E525E579F400327350 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = "../../web-ext/popup.html"; sourceTree = "<group>"; };
+		D21417E625E579F400327350 /* options.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = options.js; path = "../../web-ext/options.js"; sourceTree = "<group>"; };
+		D21417E725E579F400327350 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = "../../web-ext/manifest.json"; sourceTree = "<group>"; };
+		D21417E825E579F400327350 /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = "../../web-ext/options.html"; sourceTree = "<group>"; };
+		D21417E925E579F400327350 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = "../../web-ext/popup.css"; sourceTree = "<group>"; };
+		D21417EA25E579F400327350 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = "../../web-ext/_locales"; sourceTree = "<group>"; };
+		D21417EB25E579F400327350 /* options.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = options.css; path = "../../web-ext/options.css"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D21417B825E579F300327350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21417CA25E579F300327350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21417D325E579F300327350 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D21417B225E579F200327350 = {
+			isa = PBXGroup;
+			children = (
+				D21417BD25E579F300327350 /* Helix Helper */,
+				D21417D425E579F300327350 /* Helix Helper Extension */,
+				D21417D125E579F300327350 /* Frameworks */,
+				D21417BC25E579F300327350 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D21417BC25E579F300327350 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D21417BB25E579F300327350 /* Helix Helper.app */,
+				D21417CD25E579F300327350 /* Helix Helper Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D21417BD25E579F300327350 /* Helix Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D21417BE25E579F300327350 /* Helix_Helper.entitlements */,
+				D21417BF25E579F300327350 /* AppDelegate.swift */,
+				D21417C125E579F300327350 /* Main.storyboard */,
+				D21417C425E579F300327350 /* ViewController.swift */,
+				D21417C625E579F300327350 /* Assets.xcassets */,
+				D21417C825E579F300327350 /* Info.plist */,
+			);
+			path = "Helix Helper";
+			sourceTree = "<group>";
+		};
+		D21417D125E579F300327350 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D21417D225E579F300327350 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D21417D425E579F300327350 /* Helix Helper Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D21417E225E579F400327350 /* Resources */,
+				D21417D525E579F300327350 /* SafariWebExtensionHandler.swift */,
+				D21417D725E579F300327350 /* Info.plist */,
+				D21417D825E579F300327350 /* Helix_Helper_Extension.entitlements */,
+			);
+			path = "Helix Helper Extension";
+			sourceTree = "<group>";
+		};
+		D21417E225E579F400327350 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D21417E325E579F400327350 /* popup.js */,
+				D21417E425E579F400327350 /* images */,
+				D21417E525E579F400327350 /* popup.html */,
+				D21417E625E579F400327350 /* options.js */,
+				D21417E725E579F400327350 /* manifest.json */,
+				D21417E825E579F400327350 /* options.html */,
+				D21417E925E579F400327350 /* popup.css */,
+				D21417EA25E579F400327350 /* _locales */,
+				D21417EB25E579F400327350 /* options.css */,
+			);
+			name = Resources;
+			path = "Helix Helper Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D21417BA25E579F300327350 /* Helix Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21417DF25E579F300327350 /* Build configuration list for PBXNativeTarget "Helix Helper" */;
+			buildPhases = (
+				D21417B725E579F300327350 /* Sources */,
+				D21417B825E579F300327350 /* Frameworks */,
+				D21417B925E579F300327350 /* Resources */,
+				D21417DE25E579F300327350 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D21417D025E579F300327350 /* PBXTargetDependency */,
+			);
+			name = "Helix Helper";
+			productName = "Helix Helper";
+			productReference = D21417BB25E579F300327350 /* Helix Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D21417CC25E579F300327350 /* Helix Helper Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D21417DB25E579F300327350 /* Build configuration list for PBXNativeTarget "Helix Helper Extension" */;
+			buildPhases = (
+				D21417C925E579F300327350 /* Sources */,
+				D21417CA25E579F300327350 /* Frameworks */,
+				D21417CB25E579F300327350 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Helix Helper Extension";
+			productName = "Helix Helper Extension";
+			productReference = D21417CD25E579F300327350 /* Helix Helper Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D21417B325E579F200327350 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D21417BA25E579F300327350 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					D21417CC25E579F300327350 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D21417B625E579F200327350 /* Build configuration list for PBXProject "Helix Helper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D21417B225E579F200327350;
+			productRefGroup = D21417BC25E579F300327350 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D21417BA25E579F300327350 /* Helix Helper */,
+				D21417CC25E579F300327350 /* Helix Helper Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D21417B925E579F300327350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21417C725E579F300327350 /* Assets.xcassets in Resources */,
+				D21417C325E579F300327350 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21417CB25E579F300327350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21417ED25E579F400327350 /* images in Resources */,
+				D21417F225E579F400327350 /* popup.css in Resources */,
+				D21417F425E579F400327350 /* options.css in Resources */,
+				D21417F325E579F400327350 /* _locales in Resources */,
+				D21417EF25E579F400327350 /* options.js in Resources */,
+				D21417F025E579F400327350 /* manifest.json in Resources */,
+				D21417EE25E579F400327350 /* popup.html in Resources */,
+				D21417EC25E579F400327350 /* popup.js in Resources */,
+				D21417F125E579F400327350 /* options.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D21417B725E579F300327350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21417C525E579F300327350 /* ViewController.swift in Sources */,
+				D21417C025E579F300327350 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D21417C925E579F300327350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D21417D625E579F300327350 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D21417D025E579F300327350 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D21417CC25E579F300327350 /* Helix Helper Extension */;
+			targetProxy = D21417CF25E579F300327350 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D21417C125E579F300327350 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D21417C225E579F300327350 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D21417D925E579F300327350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D21417DA25E579F300327350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D21417DC25E579F300327350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Helix Helper Extension/Helix_Helper_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Helix Helper Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.Helix-Helper.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D21417DD25E579F300327350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Helix Helper Extension/Helix_Helper_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Helix Helper Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.Helix-Helper.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D21417E025E579F300327350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Helix Helper/Helix_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Helix Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.Helix-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D21417E125E579F300327350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Helix Helper/Helix_Helper.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Helix Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.Helix-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D21417B625E579F200327350 /* Build configuration list for PBXProject "Helix Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21417D925E579F300327350 /* Debug */,
+				D21417DA25E579F300327350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21417DB25E579F300327350 /* Build configuration list for PBXNativeTarget "Helix Helper Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21417DC25E579F300327350 /* Debug */,
+				D21417DD25E579F300327350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D21417DF25E579F300327350 /* Build configuration list for PBXNativeTarget "Helix Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D21417E025E579F300327350 /* Debug */,
+				D21417E125E579F300327350 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D21417B325E579F200327350 /* Project object */;
+}

@@ -5,3 +5,5 @@ dist/
 .cache/
 web-ext-artifacts/
 coverage/
+web-ext/*.js
+web-ext/*.css

@@ -68,7 +68,7 @@ export default function HelixHelper({ browser }) {
 
     const addNewProject = (e, project) => {
         const curProjects = [...projects];
-        const newProject = {...project} || {...PROJECT_TEMPLATE};
+        const newProject = project ? {...project} : {...PROJECT_TEMPLATE};
         curProjects.unshift(newProject);
         setProjects(curProjects);
     };
@@ -94,7 +94,7 @@ export default function HelixHelper({ browser }) {
                 <Flex width="736px" marginTop={12} direction="column" gap="size-100">
                     <Flex justifyContent="space-between" alignItems="flex-end" marginBottom={6}>
                         <Flex alignItems="center">
-                            <Image src="img/helix-logo.svg" UNSAFE_className="hlx-Logo" alt="Helix Helper" />
+                            <Image src="images/helix-logo.svg" UNSAFE_className="hlx-Logo" alt="Helix Helper" />
                             <Heading marginTop={0} level={1} UNSAFE_className="hlx-Title">Helix Helper</Heading>
                         </Flex>
                         {changed && 
