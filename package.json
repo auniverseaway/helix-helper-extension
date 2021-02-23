@@ -2,9 +2,24 @@
   "name": "helix-extension",
   "version": "1.0.0",
   "description": "A set of helpers for working with Helix content.",
+  "targets": {
+    "webext-dev": {
+      "distDir": "./web-ext",
+      "sourceMap": {
+        "inline": true,
+        "inlineSources": true
+      }
+    },
+    "webext-prod": {
+      "distDir": "./web-ext",
+      "sourceMap": false
+    }
+  },
   "scripts": {
-    "start": "parcel watch ./src/options.js ./src/less/options-base.less ./src/popup.js",
-    "build": "parcel build ./src/options.js ./src/less/options-base.less ./src/popup.js",
+    "watch:popup": "parcel watch src/popup.js --host localhost --target webext-dev",
+    "watch:options": "parcel watch src/options.js --host localhost --target webext-dev",
+    "build": "parcel build ./src/popup.js --target webext-prod && parcel build ./src/options.js --target webext-prod",
+    "start:firefox": "web-ext run --source-dir ./web-ext/",
     "test": "jest",
     "test:ci": "jest --ci --coverage && codecov"
   },
@@ -24,22 +39,23 @@
   },
   "homepage": "https://github.com/auniverseaway/helix-extension#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-env": "^7.13.0",
     "@babel/preset-react": "^7.12.13",
     "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.0",
+    "@testing-library/user-event": "^12.7.2",
     "babel-jest": "^26.6.3",
     "codecov": "^3.8.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "less": "^4.1.1",
-    "parcel": "^2.0.0-nightly.566",
+    "parcel": "2.0.0-nightly.566",
     "regenerator-runtime": "^0.13.7",
+    "web-ext": "^5.5.0",
     "webextension-polyfill": "^0.7.0"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.7.0",
-    "@spectrum-icons/workflow": "^3.2.0",
+    "@adobe/react-spectrum": "3.7.0",
+    "@spectrum-icons/workflow": "3.2.0",
     "array-move": "^3.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
