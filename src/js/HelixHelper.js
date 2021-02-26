@@ -21,6 +21,7 @@ const PROJECT_TEMPLATE = {
     liveUrl: '',
     previewUrl: '',
     contentUrl: '',
+    toolbarUrl:'',
     edit: true,
 };
 

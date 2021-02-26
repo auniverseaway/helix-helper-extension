@@ -5,5 +5,11 @@ dist/
 .cache/
 web-ext-artifacts/
 coverage/
-web-ext/*.js
-web-ext/*.css
+
+# Options
+web-ext/options.css
+web-ext/options.js
+
+# Popup
+web-ext/popup.css
+web-ext/popup.js

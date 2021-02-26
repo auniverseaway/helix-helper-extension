@@ -68,7 +68,7 @@ describe('first run', () => {
         render(<HelixHelper browser={browser} />);
         const list = getProjectList(document);
         const textfields = getTextFields(list.children[0]);
-        expect(textfields).toHaveLength(4);
+        expect(textfields).toHaveLength(5);
 
         userEvent.type(textfields[0], PROJECT_NAME);
         expect(textfields[0].value).toBe(PROJECT_NAME);
@@ -142,7 +142,7 @@ describe('first run', () => {
             userEvent.click(editButton);
         });
         textFields = getTextFields(list.children[0]);
-        expect(textFields).toHaveLength(4);
+        expect(textFields).toHaveLength(5);
     });
 
     test('The user can import', async () => {

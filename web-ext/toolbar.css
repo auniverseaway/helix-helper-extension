@@ -1,0 +1,29 @@
+.hlx-Toolbar {
+    position: fixed;
+    height: 48px;
+    display: flex;
+    background-color: rgb(30, 30, 30);
+    z-index: 100000;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.hlx-Toolbar + * {
+    margin-top: 48px;
+}
+
+
+.hlx-Toolbar button {
+    padding: 0 12px 0 12px;
+    border-color: rgb(73, 73, 73);
+    appearance: none;
+    border-width: 1px;
+    margin-right: 12px;
+    border-radius: 3px;
+    border-style: solid;
+    height: 32px;
+    background-color: rgb(26, 26, 26);
+    color: rgb(200, 200, 200);
+}
