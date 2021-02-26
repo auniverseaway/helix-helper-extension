@@ -31,13 +31,14 @@ import getPreviewUrl from './utils/getPreviewUrl';
 import getTab from './utils/getTab';
 import sendPurge from './utils/sendPurge';
 import getUrlType from './utils/getUrlType';
+import Actions from '@spectrum-icons/workflow/Actions';
 
 // Constants
 const SUCCESS_COLOR = '#3fc89c';
 const INFO_COLOR = '#5aa9fa';
 const ERROR_COLOR = '#ff7b82';
 
-export default function Actions({ browser }) {
+export default function Popup({ browser }) {
     const [tab, setTab] = useState();
     const [project, setProject] = useState();
     const [message, setMessage] = useState({});
@@ -98,6 +99,20 @@ export default function Actions({ browser }) {
         browser.runtime.openOptionsPage();
     };
 
+    const handleOpenTools = async () => {
+        // Get the toolbar as text
+        const toolbarRes = await fetch('/toolbar.js');
+        const toolbar = await toolbarRes.text();
+
+        const code = toolbar.replace('{{TEMP_SITE_TOOLBAR}}',
+            `${tab.origin}${project.toolbarUrl}`);
+
+        browser.tabs.insertCSS(tab.id,{ file: `/toolbar.css`});
+
+        // Execute the script and toolbar
+        browser.tabs.executeScript(tab.id, { code });
+    };
+
     return (
         <Provider theme={darkTheme}>
             <Flex justifyContent="center">
@@ -115,6 +130,7 @@ export default function Actions({ browser }) {
                             <ActionButton isQuiet onPress={handlePreviewButton}><Preview /> <Text>Preview</Text></ActionButton>
                             <ActionButton isQuiet onPress={handleRefreshButton}><DocumentRefresh /> <Text>Clear cache</Text></ActionButton>
                             <ActionButton isQuiet onPress={handleCopyButton}><Copy /> <Text>Copy link</Text></ActionButton>
+                            <ActionButton isQuiet onPress={handleOpenTools}><Actions /> <Text>Site Actions</Text></ActionButton>
                             <input id="hlx-CopyInput" type="text" defaultValue={tab.url} />
                         </Grid>
                     }

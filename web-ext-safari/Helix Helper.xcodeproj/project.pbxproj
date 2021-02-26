@@ -23,6 +23,8 @@
 		D21417F225E579F400327350 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = D21417E925E579F400327350 /* popup.css */; };
 		D21417F325E579F400327350 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = D21417EA25E579F400327350 /* _locales */; };
 		D21417F425E579F400327350 /* options.css in Resources */ = {isa = PBXBuildFile; fileRef = D21417EB25E579F400327350 /* options.css */; };
+		D2800EED25E883A9006E86A4 /* toolbar.js in Resources */ = {isa = PBXBuildFile; fileRef = D2800EEC25E883A9006E86A4 /* toolbar.js */; };
+		D2800EF125E8ADB0006E86A4 /* toolbar.css in Resources */ = {isa = PBXBuildFile; fileRef = D2800EF025E8ADB0006E86A4 /* toolbar.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		D21417E925E579F400327350 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = "../../web-ext/popup.css"; sourceTree = "<group>"; };
 		D21417EA25E579F400327350 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = "../../web-ext/_locales"; sourceTree = "<group>"; };
 		D21417EB25E579F400327350 /* options.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = options.css; path = "../../web-ext/options.css"; sourceTree = "<group>"; };
+		D2800EEC25E883A9006E86A4 /* toolbar.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = toolbar.js; path = "../../web-ext/toolbar.js"; sourceTree = "<group>"; };
+		D2800EF025E8ADB0006E86A4 /* toolbar.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = toolbar.css; path = "../../web-ext/toolbar.css"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 		D21417E225E579F400327350 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D2800EF025E8ADB0006E86A4 /* toolbar.css */,
+				D2800EEC25E883A9006E86A4 /* toolbar.js */,
 				D21417E325E579F400327350 /* popup.js */,
 				D21417E425E579F400327350 /* images */,
 				D21417E525E579F400327350 /* popup.html */,
@@ -249,7 +255,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2800EED25E883A9006E86A4 /* toolbar.js in Resources */,
 				D21417ED25E579F400327350 /* images in Resources */,
+				D2800EF125E8ADB0006E86A4 /* toolbar.css in Resources */,
 				D21417F225E579F400327350 /* popup.css in Resources */,
 				D21417F425E579F400327350 /* options.css in Resources */,
 				D21417F325E579F400327350 /* _locales in Resources */,

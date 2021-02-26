@@ -52,6 +52,8 @@ const SortableItem = sortableElement(({ project, idx, handleDelete, handleChange
                         <Link isQuiet>
                             <a href={project.contentUrl} target="_blank">{cleanUrl(project.contentUrl)}</a>
                         </Link>
+                        <p>Toolbar</p>
+                        <div>{project.toolbarUrl}</div>
                     </div>
                 }
                 {project.edit &&
@@ -79,6 +81,12 @@ const SortableItem = sortableElement(({ project, idx, handleDelete, handleChange
                             placeholder="adobe.sharepoint.com"
                             value={project.contentUrl}
                             onChange={(value) => handleChange(idx, 'contentUrl', value)}
+                            width="100%" />
+                        <TextField
+                            label="Toolbar location"
+                            placeholder="/path/to/manifest.json"
+                            value={project.toolbarUrl}
+                            onChange={(value) => handleChange(idx, 'toolbarUrl', value)}
                             width="100%" />
                     </div>
                 }
